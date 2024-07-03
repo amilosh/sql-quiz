@@ -1,0 +1,27 @@
+1.
+В Transactions id1 - айди компании, которая перечисляет деньги, id2 - айди компании, которая получает деньги.
+В результирующей таблице должна быть имя компании, и сумма всех транзакций (как отпрвление, так и получение).
+CREATE TABLE company (
+    id INT,
+    name VARCHAR(10)
+);
+CREATE TABLE transactions (
+    id1 INT,
+    id2 INT,
+    amount INT
+);
+INSERT INTO company (id, name) VALUES (1, 'Sony');
+INSERT INTO transactions (id1, id2, amount) VALUES (1, 2, 100);
+
+2.
+В результирующей таблице должна быть имя компании, и сумма всех транзакций.
+CREATE TABLE company (
+    id INT,
+    name VARCHAR(10)
+);
+CREATE TABLE transactions (
+    company_id INT,
+    amount INT
+);
+INSERT INTO company (id, name) VALUES (1, 'Sony');
+INSERT INTO transactions (company_id, amount) VALUES (1, 100);

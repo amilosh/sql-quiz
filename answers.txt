@@ -1,0 +1,10 @@
+1.
+select c.name, sum(t.amount) from company c
+inner join transactions t on c.id = t.id1 or c.id = t.id2
+group by c.name;
+
+2.
+select c.name, sub.sum from company c
+join (select t.company_id, sum(t.amount) as sum
+from transactions t
+group by t.company_id) as sub on c.id = sub.company_id;
